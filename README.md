@@ -27,8 +27,11 @@ in R 4.0.4
 
 INSTALLATION INSTRUCTIONS
 ==============
-Download the "code" folder, and put it somewhere appropriate. If necessary, install required packages in R with: install_packages(c("ape", "cowplot", "dplyr", "forcats", "ggh4x", "ggnewscale", "ggplot2", "hash", "R.utils", "stringr", "tibble", "tidyr", "tidyverse")). To install "lme4qtl", see https://github.com/variani/lme4qtl
+Simply download the repo. If necessary, install required packages in R with: install_packages(c("ape", "cowplot", "dplyr", "forcats", "ggh4x", "ggnewscale", "ggplot2", "hash", "R.utils", "stringr", "tibble", "tidyr", "tidyverse")). To install "lme4qtl", see https://github.com/variani/lme4qtl
 
 INSTRUCTIONS FOR USE
 ==============
-Run the scrtips in R. To run the scripts, assign "path_to_wd" variable with your "path/to/code/dir". Results and summary statistics will be available to you in "code/results".
+Upzip the file "variant table.zip" in the "data" directory, and leave the file "variant table.txt" there.
+Run the scrtips in R.
+To execute the codes, set the variable "path_to_wd" to the path of the "code" directory.
+Results will be available to you in "code/results".
