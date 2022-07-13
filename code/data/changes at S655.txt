@@ -1,0 +1,20 @@
+position	variant	sample	cell_line	passage	replicate	mut_pattern	frequency
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P0	B	H655	1
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P1	B	Y655	0.0106951871657754
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P1	B	H655	0.989304812834225
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P2	B	H655	1
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P3	B	Y655	0.0414414414414414
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P3	B	H655	0.953153153153153
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P3	B	Others	0.00540540540540535
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P4	B	Y655	0.144736842105263
+Spike's protein aa 655 (site 23,525)	B.1.36.16	73NLt	Vero E6	P4	B	H655	0.855263157894737
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P0	A	H655	1
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P1	A	H655	0.994285714285714
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P1	A	Others	0.00571428571428567
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P2	A	H655	0.997762863534676
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P2	A	Others	0.00223713646532442
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P3	A	Y655	0.0120845921450151
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P3	A	H655	0.984894259818731
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P3	A	Others	0.00302114803625375
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P4	A	Y655	0.129032258064516
+Spike's protein aa 655 (site 23,525)	B.1.36.16	CV130	Vero E6	P4	A	H655	0.870967741935484

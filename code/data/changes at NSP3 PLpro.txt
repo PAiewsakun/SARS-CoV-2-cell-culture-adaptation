@@ -1,0 +1,254 @@
+position	variant	sample	cell_line	passage	replicate	mut_pattern	frequency
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	A	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	A	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	A	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	B	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	B	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P0	B	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P1	A	S848	0.897058823529412
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P1	A	C848	0.102941176470588
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P1	B	S848	0.943708609271523
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P1	B	C848	0.0562913907284768
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P2	A	S848	0.985858585858586
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P2	A	C848	0.0101010101010101
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P2	A	Others	0.00404040404040407
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P2	B	S848	0.985576923076923
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P2	B	C848	0.0144230769230769
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P3	A	S848	0.93342776203966
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P3	A	C848	0.0665722379603399
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P3	B	S848	0.935984481086324
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P3	B	C848	0.0630455868089234
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P3	B	Others	0.000969932104752713
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P4	A	S848	0.863799283154122
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P4	A	C848	0.136200716845878
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P4	B	S848	0.925925925925926
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6	P4	B	C848	0.0740740740740741
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	A	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	A	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	A	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	B	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	B	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P0	B	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P1	A	S848	0.884735202492212
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P1	A	C848	0.115264797507788
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P1	B	S848	0.924050632911392
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P1	B	C848	0.0759493670886076
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P2	A	S848	0.957618567103935
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P2	A	C848	0.041372351160444
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P2	A	Others	0.00100908173562053
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P2	B	S848	0.998039215686275
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P2	B	C848	0.00196078431372549
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P3	A	S848	0.901960784313726
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P3	A	C848	0.0980392156862745
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P3	B	S848	0.928899082568807
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P3	B	C848	0.0688073394495413
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P3	B	Others	0.00229357798165131
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P4	A	S848	0.902912621359223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P4	A	C848	0.0970873786407767
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P4	B	S848	0.88255033557047
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Vero E6/TMPRSS2	P4	B	C848	0.11744966442953
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	A	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	A	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	A	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	B	S848	0.975728155339806
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	B	C848	0.0194174757281553
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P0	B	Others	0.00485436893203883
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P1	A	S848	0.885826771653543
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P1	A	C848	0.114173228346457
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P1	B	S848	0.853982300884956
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P1	B	C848	0.141592920353982
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P1	B	Others	0.00442477876106195
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P2	A	S848	0.962574850299401
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P2	A	C848	0.0374251497005988
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P2	B	S848	0.911764705882353
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P2	B	C848	0.0865051903114187
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P2	B	Others	0.0017301038062284
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P3	A	S848	0.930451127819549
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P3	A	C848	0.0695488721804511
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P3	B	S848	0.892857142857143
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P3	B	C848	0.107142857142857
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P4	A	S848	0.89198606271777
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P4	A	C848	0.104529616724739
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P4	A	Others	0.00348432055749126
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P4	B	S848	0.933993399339934
+NSP3 papain-like protease (site 5,262)	B.1.36.16	73NLt	Calu-3	P4	B	C848	0.066006600660066
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	A	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	A	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	A	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	B	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	B	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P0	B	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P1	A	S848	0.87012987012987
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P1	A	C848	0.12987012987013
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P1	B	S848	0.847887323943662
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P1	B	C848	0.152112676056338
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P2	A	S848	0.932384341637011
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P2	A	C848	0.0649466192170818
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P2	A	Others	0.00266903914590744
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P2	B	S848	1
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P3	A	S848	0.953150242326333
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P3	A	C848	0.0452342487883683
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P3	A	Others	0.00161550888529882
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P3	B	S848	0.901960784313726
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P3	B	C848	0.0980392156862745
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P4	A	S848	0.921875
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P4	A	C848	0.078125
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P4	B	S848	0.850602409638554
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P4	B	C848	0.146987951807229
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6	P4	B	Others	0.00240963855421683
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	A	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	A	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	A	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	B	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	B	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P0	B	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P1	A	S848	0.921606118546845
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P1	A	C848	0.0783938814531549
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P1	B	S848	0.914634146341463
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P1	B	C848	0.0813008130081301
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P1	B	Others	0.00406504065040647
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P2	A	S848	0.943202979515829
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P2	A	C848	0.0567970204841713
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P2	B	S848	0.963317384370016
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P2	B	C848	0.0334928229665072
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P2	B	Others	0.00318979266347696
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P3	A	S848	0.972560975609756
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P3	A	C848	0.0274390243902439
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P3	B	S848	0.923930269413629
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P3	B	C848	0.0760697305863708
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P4	A	S848	0.924217462932455
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P4	A	C848	0.0741350906095552
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P4	A	Others	0.0016474464579902
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P4	B	S848	0.923312883435583
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Vero E6/TMPRSS2	P4	B	C848	0.0766871165644172
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	A	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	A	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	A	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	B	S848	0.97972972972973
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	B	C848	0.018018018018018
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P0	B	Others	0.00225225225225223
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	A	S848	0.935393258426966
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	A	C848	0.0617977528089888
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	A	Others	0.0028089887640449
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	B	S848	0.894472361809045
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	B	C848	0.100502512562814
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P1	B	Others	0.00502512562814073
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P2	A	S848	0.959555106167846
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P2	A	C848	0.0394337714863498
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P2	A	Others	0.00101112234580381
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P2	B	S848	1
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P3	A	S848	0.96242774566474
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P3	A	C848	0.0375722543352601
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P3	B	S848	0.9575
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P3	B	C848	0.0425
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P4	A	S848	0.919831223628692
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P4	A	C848	0.080168776371308
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P4	B	S848	0.9064039408867
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P4	B	C848	0.0886699507389163
+NSP3 papain-like protease (site 5,262)	B.1.36.16	CV130	Calu-3	P4	B	Others	0.00492610837438423
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P0	A	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P0	A	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P0	B	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P0	B	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P1	A	S848	0.918032786885246
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P1	A	C848	0.0819672131147541
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P1	B	S848	0.923076923076923
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P1	B	C848	0.0769230769230769
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P2	A	S848	0.986876640419947
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P2	A	C848	0.0131233595800525
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P2	B	S848	0.957731958762887
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P2	B	C848	0.0412371134020619
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P2	B	Others	0.00103092783505154
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P3	A	S848	0.92156862745098
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P3	A	C848	0.0784313725490196
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P3	B	S848	0.92368839427663
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P3	B	C848	0.0747217806041336
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P3	B	Others	0.00158982511923689
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P4	A	S848	0.91131498470948
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P4	A	C848	0.0856269113149847
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P4	A	Others	0.00305810397553519
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P4	B	S848	0.904605263157895
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6	P4	B	C848	0.0953947368421053
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P0	A	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P0	A	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P0	B	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P0	B	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P1	A	S848	0.919902912621359
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P1	A	C848	0.0776699029126214
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P1	A	Others	0.00242718446601942
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P1	B	S848	0.947154471544715
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P1	B	C848	0.0528455284552846
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P2	A	S848	0.947867298578199
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P2	A	C848	0.0521327014218009
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P2	B	S848	0.96875
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P2	B	C848	0.0293560606060606
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P2	B	Others	0.00189393939393945
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P3	A	S848	0.923950056753689
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P3	A	C848	0.076049943246311
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P3	B	S848	0.948877805486284
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P3	B	C848	0.0511221945137157
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P4	A	S848	0.909342560553633
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P4	A	C848	0.0865051903114187
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P4	A	Others	0.00415224913494805
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P4	B	S848	0.933333333333333
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Vero E6/TMPRSS2	P4	B	C848	0.0666666666666667
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P0	A	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P0	A	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P0	B	S848	0.969827586206897
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P0	B	C848	0.0301724137931034
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	A	S848	0.95343137254902
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	A	C848	0.0441176470588235
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	A	Others	0.00245098039215685
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	B	S848	0.916317991631799
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	B	C848	0.0753138075313808
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P1	B	Others	0.00836820083682011
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P2	A	S848	0.941176470588235
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P2	A	C848	0.0588235294117647
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P2	B	S848	0.920118343195266
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P2	B	C848	0.0798816568047337
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P3	A	S848	0.957328385899815
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P3	A	C848	0.0408163265306122
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P3	A	Others	0.00185528756957321
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P3	B	S848	0.96234309623431
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P3	B	C848	0.0376569037656904
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P4	A	S848	0.979411764705882
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P4	A	C848	0.0205882352941176
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P4	B	S848	0.986363636363636
+NSP3 papain-like protease (site 5,262)	AY.30	OTV54	Calu-3	P4	B	C848	0.0136363636363636
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P0	A	S848	0.96969696969697
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P0	A	C848	0.0303030303030303
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P1	A	S848	0.987711213517665
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P1	A	C848	0.00921658986175115
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P1	A	Others	0.00307219662058378
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P2	A	S848	0.899339933993399
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P2	A	C848	0.099009900990099
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P2	A	Others	0.00165016501650173
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P3	A	S848	0.948148148148148
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P3	A	C848	0.0488888888888889
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P3	A	Others	0.00296296296296295
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P4	A	S848	0.906158357771261
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P4	A	C848	0.0909090909090909
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6	P4	A	Others	0.00293255131964809
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P0	A	S848	0.96969696969697
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P0	A	C848	0.0303030303030303
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P0	B	S848	0.96969696969697
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P0	B	C848	0.0303030303030303
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P1	A	S848	0.969858156028369
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P1	A	C848	0.0301418439716312
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P1	B	S848	0.956033676333021
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P1	B	C848	0.0411599625818522
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P1	B	Others	0.00280636108512633
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P2	A	S848	0.943100995732575
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P2	A	C848	0.0568990042674253
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P2	B	S848	0.937436932391524
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P2	B	C848	0.0625630676084763
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	A	S848	0.964091403699674
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	A	C848	0.0337323177366703
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	A	Others	0.0021762785636561
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	B	S848	0.946808510638298
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	B	C848	0.0520094562647754
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P3	B	Others	0.00118203309692677
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P4	A	S848	0.858895705521472
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P4	A	C848	0.141104294478528
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P4	B	S848	0.933476394849785
+NSP3 papain-like protease (site 5,262)	AY.30	NH783	Vero E6/TMPRSS2	P4	B	C848	0.0665236051502146

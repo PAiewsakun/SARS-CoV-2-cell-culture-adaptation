@@ -1,0 +1,21 @@
+position	variant	sample	cell_line	passage	replicate	mut_pattern	frequency
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P0	A	SMGTSPA	1
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P0	A	Others	0
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P1	A	SMGTSPA	0.990291262
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P1	A	Others	0.009708738
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P2	A	SMGTSPA	1
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P2	A	Others	0
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P3	A	SMGTSPA	0.75
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P3	A	S------	0.216666667
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P3	A	Others	0.033333333
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P4	A	S------	0.795918367
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P4	A	SMGTSPA	0.183673469
+Nucleocapsid's linker (sites 28,877-28,897)	AY.30	NH783	Vero E6	P4	A	Others	0.020408163
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P0	B	A208	1
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P1	B	A208	1
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P2	B	A208	1
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P3	B	A208	0.9684685
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P3	B	V208	0.031531532
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P4	B	A208	0.8495935
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P4	B	V208	0.148373984
+Nucleocapsid's linker (site 28,896)	B.1.36.16	CV130	Vero E6	P4	B	Others	0.00203252

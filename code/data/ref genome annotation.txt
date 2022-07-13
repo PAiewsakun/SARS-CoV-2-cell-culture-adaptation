@@ -1,0 +1,129 @@
+start	end	type	gene	region
+1	265	5'UTR	5'UTR	NA
+266	805	gene	NSP1	NA
+266	613	subregion	NSP1	NTD
+707	805	subregion	NSP1	CTD
+806	2719	gene	NSP2	NA
+806	2719	subregion	NSP2	NA
+2720	8554	gene	NSP3	NA
+2720	2902	subregion	NSP3	NTD
+2903	3415	subregion	NSP3	DUF3655
+3425	3796	subregion	NSP3	Macro X domain
+3962	4315	subregion	NSP3	Macro SF
+4316	4744	subregion	NSP3	SUD-M
+4751	4948	subregion	NSP3	SUD-C
+4961	5869	subregion	NSP3	PLPro
+6002	6322	subregion	NSP3	NAB
+6395	6742	subregion	NSP3	betaSM
+6959	7024	subregion	NSP3	TM1
+7274	7342	subregion	NSP3	TM2
+7343	8554	subregion	NSP3	CTD
+8555	10054	gene	NSP4	NA
+8555	8593	subregion	NSP4	NTD
+8594	8662	subregion	NSP4	TM1
+8663	9391	subregion	NSP4	Btw TM1&TM2 (out)
+9392	9457	subregion	NSP4	TM2
+9458	9499	subregion	NSP4	Btw TM2&TM3 (in)
+9500	9565	subregion	NSP4	TM3
+9566	9643	subregion	NSP4	Btw TM3&TM4 (out)
+9644	9712	subregion	NSP4	TM4
+9770	10048	subregion	NSP4	CTD
+10055	10972	gene	NSP5	NA
+10055	10972	subregion	NSP5	3C-like proteinase
+10973	11842	gene	NSP6	NA
+10973	11842	subregion	NSP6	NA
+11843	12091	gene	NSP7	NA
+11843	12091	subregion	NSP7	NA
+12092	12685	gene	NSP8	NA
+12092	12340	subregion	NSP8	Replicase
+12686	13024	gene	NSP9	NA
+12686	13024	subregion	NSP9	ssRNA-binding protein
+13025	13441	gene	NSP10	NA
+13025	13441	subregion	NSP10	Growth-factor-like protein
+13442	13468	gene	NSP11	NA
+13451	13468	subregion	NSP12	NiRAN
+13468	16236	gene	NSP12	NA
+13468	14187	subregion	NSP12	NiRAN
+14188	14535	subregion	NSP12	Interface
+14536	15183	subregion	NSP12	Finger domain 1
+15184	15300	subregion	NSP12	Palm domain 1
+15301	15477	subregion	NSP12	Finger domain 2
+15478	15885	subregion	NSP12	Palm domain 2
+15886	16236	subregion	NSP12	Thumb domain
+16237	18039	gene	NSP13	NA
+16237	16521	subregion	NSP13	ZBD
+16531	16674	subregion	NSP13	Stalk domain
+16684	16920	subregion	NSP13	1B domain
+16987	18006	subregion	NSP13	Helicase domain
+18040	19620	gene	NSP14	NA
+18040	19620	subregion	NSP14	3'-to-5' exonuclease
+19621	20658	gene	NSP15	NA
+19621	19803	subregion	NSP15	NTD
+19813	20199	subregion	NSP15	Middle domain
+20200	20652	subregion	NSP15	endoRNAse domain
+20659	21552	gene	NSP16	NA
+20659	21552	subregion	NSP16	2'-O-ribose methyltransferase
+21553	21562	intergenic region	NA	NSP16/S
+21563	25384	gene	S	NA
+21599	22474	subregion	S	NTD
+22517	23185	subregion	S	RBD
+22874	23086	subregion	S	Binding motif
+23186	23575	subregion	S	Btw RBD&MBCS
+23576	23689	subregion	S	MBCS
+23954	23980	subregion	S	FP
+24008	24061	subregion	S	Internal FP
+24062	24313	subregion	S	Btw FP&HR1
+24314	24511	subregion	S	HR1
+24512	25045	subregion	S	Btw HR1&HR2
+25046	25171	subregion	S	HR2
+25259	25381	subregion	S	Intravirion CTD
+25385	25392	intergenic region	NA	S/ORF3a
+25393	26220	gene	ORF3a	NA
+25393	25506	subregion	ORF3a	NTD
+25507	25569	subregion	ORF3a	TM1
+25570	25626	subregion	ORF3a	Btw TM1&TM2 (in)
+25627	25689	subregion	ORF3a	TM2
+25690	25704	subregion	ORF3a	Btw TM2&TM3 (out)
+25705	25767	subregion	ORF3a	TM3
+25768	26220	subregion	ORF3a	B-sheet CTD
+26221	26244	intergenic region	NA	ORF3a/E
+26245	26472	gene	E	NA
+26245	26268	subregion	E	NTD
+26269	26352	subregion	E	TM
+26353	26469	subregion	E	CTD
+26473	26522	intergenic region	NA	E/M
+26523	27191	gene	M	NA
+26523	26579	subregion	M	NTD
+26580	26636	subregion	M	TM1
+26658	26732	subregion	M	TM2
+26748	26822	subregion	M	TM3
+26823	27188	subregion	M	CTD
+27192	27201	intergenic region	NA	M/ORF6
+27202	27387	gene	ORF6	NA
+27202	27384	subregion	ORF6	NA
+27388	27393	intergenic region	NA	ORF6/ORF7a
+27394	27759	gene	ORF7a	NA
+27394	27756	subregion	ORF7a	NA
+27756	27887	gene	ORF7b	NA
+27756	27884	subregion	ORF7b	NA
+27888	27893	intergenic region	NA	ORF7b/ORF8
+27894	28259	gene	ORF8	NA
+27948	27968	subregion	ORF8	Ig strand A
+27981	28004	subregion	ORF8	Ig strand B
+28020	28034	subregion	ORF8	Ig strand C
+28044	28076	subregion	ORF8	Ig strand C'
+28095	28109	subregion	ORF8	Ig strand D
+28113	28124	subregion	ORF8	Ig strand E
+28149	28166	subregion	ORF8	Ig strand F
+28179	28199	subregion	ORF8	Ig strand G
+28260	28273	intergenic region	NA	ORF8/N
+28274	29533	gene	N	NA
+28274	28402	subregion	N	N-arm
+28403	28795	subregion	N	RNA binding NTD
+28796	29035	subregion	N	Linker region
+29036	29365	subregion	N	Dimerization domain
+29366	29530	subregion	N	C-tail
+29534	29557	intergenic region	NA	N/ORF10
+29558	29674	gene	ORF10	NA
+29558	29671	subregion	ORF10	NA
+29675	29903	3'UTR	3'UTR	NA
