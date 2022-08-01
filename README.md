@@ -4,7 +4,7 @@
 
 Description
 ==============
-R scripts used to generate figures and results in the manuscript entitled "Systematic genome-wide exploration of SARS-CoV-2 cell culture adaptation to Vero E6, Vero E6/TMPRSS2, and Calu-3 cells" (Aiewsakun et al. 2022).
+R scripts used to generate figures and results in the manuscript entitled "Systematic exploration of SARS-CoV-2 adaptation to Vero E6, Vero E6/TMPRSS2, and Calu-3 cells" (Aiewsakun et al. 2022).
 
 The analyses were run using the following R packages:
 ==============
