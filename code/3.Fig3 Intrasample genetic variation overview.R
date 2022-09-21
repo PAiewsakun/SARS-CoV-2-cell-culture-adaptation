@@ -345,24 +345,22 @@ ggsave(Fig3_genetic_change_count.svg_filename,
 	dpi = 300)
 
 ####################
-#Comparing count distributions
+#Comparing polymorphic site count distributions by likelihood ratio tests ..
 ####################
-#comparing models describing polymorphic site count distributions by ANOVA tests ..
-#..to see if polymorphic site counts of the base sub types along differ among conditions
-#subset the data to include only variant site counts with base sub types found in cultured samples
-genetic_change_count_no_clinical_sample_base_sub_only <- genetic_change_count_table %>% 
+#subset the data to include only variant site counts from cultured samples
+genetic_change_count_no_clinical_sample <- genetic_change_count_table %>% 
 	filter(cell_line %in% c("Vero E6", "Vero E6-TMPRSS2", "Calu-3")) %>%
-	select(variant:G.C) %>%
-	gather(type, count, A.T:G.C) 
+	select(variant:G.DEL, DEL.A:DEL.G) %>%
+	gather(type, count, A.T:DEL.G)
 
-#Construct the models describing polymorphic site count distributions 
-mdl_1 <- glm(formula = count ~ type + sample * cell_line , data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
-mdl_2 <- glm(formula = count ~ type + sample + cell_line , data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
-mdl_3 <- glm(formula = count ~ type, data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
+#Construct models describing polymorphic site count distributions 
+mdl_1 <- glm(formula = count ~ type + sample * cell_line , data = genetic_change_count_no_clinical_sample, family = "poisson") 
+mdl_2 <- glm(formula = count ~ type + sample + cell_line , data = genetic_change_count_no_clinical_sample, family = "poisson") 
+mdl_3 <- glm(formula = count ~ type, data = genetic_change_count_no_clinical_sample, family = "poisson") 
 
 #Likelihood ratio tests
 sink(Misc_info_var_site_count_by_cellline_filename, append = T)
-cat("Fitting mdoels to the count distributions\n")
+cat("Fitting Poisson regression models to the count distributions\n")
 cat("=========================\n")
 cat(sprintf("model: %s\n", format(mdl_1$formula)))
 summary(mdl_1)
@@ -383,5 +381,83 @@ anova(mdl_3, mdl_2, test = "LRT")
 cat("\n")
 cat("**...and the effects were not simply additive**")
 anova(mdl_2, mdl_1, test = "LRT")
+cat("\n")
+sink()
+
+####################
+#Comparing polymorphic site count distributions by likelihood ratio tests, considering base substitutions only
+####################
+#subset the data to include only variant site counts with base sub types found in cultured samples
+genetic_change_count_no_clinical_sample_base_sub_only <- genetic_change_count_table %>% 
+	filter(cell_line %in% c("Vero E6", "Vero E6-TMPRSS2", "Calu-3")) %>%
+	select(variant:G.C) %>%
+	gather(type, count, A.T:G.C)
+
+#Construct the models describing polymorphic site count distributions 
+mdl_1 <- glm(formula = count ~ type + sample * cell_line , data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
+mdl_2 <- glm(formula = count ~ type + sample + cell_line , data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
+mdl_3 <- glm(formula = count ~ type, data = genetic_change_count_no_clinical_sample_base_sub_only, family = "poisson") 
+
+#Likelihood ratio tests
+sink(Misc_info_var_site_count_by_cellline_filename, append = T)
+cat("Fitting Poisson regression models to the count distributions, considering base substitutions only\n")
+cat("=========================\n")
+cat(sprintf("model: %s\n", format(mdl_1$formula)))
+summary(mdl_1)
+cat("\n")
+
+cat(sprintf("model: %s\n", format(mdl_2$formula)))
+summary(mdl_2)
+cat("\n")
+
+cat(sprintf("model: %s\n", format(mdl_3$formula)))
+summary(mdl_3)
+cat("\n")
+
+cat("Model comparisons\n")
+cat("=========================\n")
+cat("**Count distributions were significantly different among viral samples and cell culture conditions...**")
+anova(mdl_3, mdl_2, test = "LRT")
+cat("\n")
+cat("**...and the effects were not simply additive**")
+anova(mdl_2, mdl_1, test = "LRT")
+cat("\n")
+sink()
+
+
+####################
+#Comparing polymorphic site freq distributions by likelihood ratio tests, considering base substitutions only
+####################
+genetic_change_freq_no_clinical_sample_base_sub_only <- 
+genetic_change_count_no_clinical_sample_base_sub_only %>%
+group_by(variant, sample, cell_line, passage, replicate) %>%
+mutate(freq = count/sum(count)) %>% 
+ungroup() %>% as.data.frame %>%
+arrange(variant, sample, cell_line, passage, replicate) 
+
+mdl_1 <- glm(formula = freq ~ type + sample * cell_line , data = genetic_change_freq_no_clinical_sample_base_sub_only, family= "quasibinomial") 
+mdl_2 <- glm(formula = freq ~ type + sample + cell_line , data = genetic_change_freq_no_clinical_sample_base_sub_only, family = "quasibinomial") 
+mdl_3 <- glm(formula = freq ~ type, data = genetic_change_freq_no_clinical_sample_base_sub_only, family = "quasibinomial") 
+
+sink(Misc_info_var_site_count_by_cellline_filename, append = T)
+cat("\n")
+cat("Fitting quasibinomial regression models to the freq distributions, considering base substitutions only\n")
+cat("=========================\n")
+cat(sprintf("model: %s\n", format(mdl_1$formula)))
+summary(mdl_1)
+cat("\n")
+
+cat(sprintf("model: %s\n", format(mdl_2$formula)))
+summary(mdl_2)
+cat("\n")
+
+cat(sprintf("model: %s\n", format(mdl_3$formula)))
+summary(mdl_3)
+cat("\n")
+
+cat("Model comparisons\n")
+cat("=========================\n")
+cat("**freq distributions were insignificantly different among viral samples and cell culture conditions...**")
+anova(mdl_3, mdl_2, test = "LRT")
 sink()
 
