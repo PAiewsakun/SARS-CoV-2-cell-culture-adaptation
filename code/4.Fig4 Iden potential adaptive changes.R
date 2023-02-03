@@ -37,8 +37,13 @@ clinical_sample_ML_tree_filename <- "data/clinical viral sample ML tree.treefile
 cand_adap_site_info_filename <- "results/Supplementary Data 3.cand_adap_site_info.raw.required formatting.txt"
 Fig4_mut_adv_coef_by_pos_plot.png_filename <- "results/Fig4_mut_adv_coef_by_pos_plot.png"
 Fig4_mut_adv_coef_by_pos_plot.svg_filename <- "results/Fig4_mut_adv_coef_by_pos_plot.svg"
-Ext_Dat_FigS3_temp_dyn_of_adap_changes.png_filename <- "results/Ext Dat FigS3_temp_dyn_of_adap_changes.png"
-Ext_Dat_FigS3_temp_dyn_of_adap_changes.svg_filename <- "results/Ext Dat FigS3_temp_dyn_of_adap_changes.svg"
+
+Ext_Dat_FigS3_temp_dyn_of_adap_changes.E6.png_filename <- "results/Ext Dat FigS3_temp_dyn_of_adap_changes.E6.png"
+Ext_Dat_FigS3_temp_dyn_of_adap_changes.E6.svg_filename <- "results/Ext Dat FigS3_temp_dyn_of_adap_changes.E6.svg"
+Ext_Dat_FigS4_temp_dyn_of_adap_changes.TM.png_filename <- "results/Ext Dat FigS4_temp_dyn_of_adap_changes.TM.png"
+Ext_Dat_FigS4_temp_dyn_of_adap_changes.TM.svg_filename <- "results/Ext Dat FigS4_temp_dyn_of_adap_changes.TM.svg"
+Ext_Dat_FigS5_temp_dyn_of_adap_changes.C3.png_filename <- "results/Ext Dat FigS5_temp_dyn_of_adap_changes.C3.png"
+Ext_Dat_FigS5_temp_dyn_of_adap_changes.C3.svg_filename <- "results/Ext Dat FigS5_temp_dyn_of_adap_changes.C3.svg"
 
 ####################
 #Set parameter values
@@ -47,7 +52,7 @@ Ext_Dat_FigS3_temp_dyn_of_adap_changes.svg_filename <- "results/Ext Dat FigS3_te
 depth_lw_threshold <- 30
 fMut_lw_threshold <- 0.05
 mut_adv_coef_lw_threshold <- 0
-adj_p_threshold <- 0.05/1/29644/3 #Bonferroni multiple-testing corrected p value threshold from 0.05 to 0.05 / 29,644 sites / 3 cell lines = 5.62×10-7%
+adj_p_threshold <- 0.05/1/29644/3 #Bonferroni multiple-testing corrected p value threshold from 0.05 to 0.05 / 29,644 sites / 3 cell lines = 5.62Ã—10-7%
 
 ####################
 #Compute mutant variant frequencies
@@ -492,7 +497,7 @@ write.table(
 )
 
 ####################
-#ploting sites with potential adaptation mutations
+#Ploting sites with potential adaptation mutations
 ####################
 #make mut_adv_coef_by_pos_plot
 mut_adv_coef_dat <- cand_adap_site_info %>%
@@ -627,7 +632,7 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, cand_adap_site_info,
 	variant_table_dat %>% mutate(passage = recode_factor(passage, "Clinical sample" = "P0")) %>%
 	ggplot(aes(x = passage, y = fMut)) +
 	geom_point(aes(col = variant_sample, alpha = alpha), size = 1) + 
-	geom_line(aes(group = exp_id_pos, col = variant_sample, linetype = variant_sample, alpha = alpha), size = 0.5) + 
+	geom_line(aes(group = exp_id_pos, col = variant_sample, linetype = replicate, alpha = alpha), size = 0.5) + 
 	
 	scale_color_manual(
 		name = "Virus sample",
@@ -639,12 +644,10 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, cand_adap_site_info,
 		)
 	) +
 	scale_linetype_manual(
-		name = "Virus sample",
+		name = "Replicate",
 		values = c( 
-			"B.1.36.16: 73NLt" = "solid", 
-			"B.1.36.16: CV130" = "solid",
-			"AY.30: OTV54" = "solid", 
-			"AY.30: NH783" = "solid"
+			"A" = "solid", 
+			"B" = "dashed"
 		)
 	) +
 	scale_shape_manual(
@@ -676,38 +679,38 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, cand_adap_site_info,
 	) +
 	labs(title = plot_title) +
 
-	geom_text(
-		data = cand_adap_site_info %>% 
-			mutate(
-				label_B.1.36.16 = 
-				ifelse(
-					adap_site_cand_B.1.36.16, 
-					paste(
-						"B.1.36.16: \u0394s = ", round(mut_adv_coef_B.1.36.16, 3), 
-						";\n\u00B5 = ", mu_nt_aa_B.1.36.16, 
-						";\n+ve experiment = ", positive_exp_id_B.1.36.16,
-						sep = ""
-					),
-					NA
-				),
-				label_AY.30 = 
-				ifelse(
-					adap_site_cand_AY.30, 
-					paste(
-						"AY.30: \u0394s = ", round(mut_adv_coef_AY.30, 3), 
-						";\n\u00B5 = ", mu_nt_aa_AY.30, 
-						";\n+ve experiment = ", positive_exp_id_AY.30,
-						sep = ""
-					),
-					NA
-				)
-			) %>% 
-			unite(label, label_B.1.36.16, label_AY.30, na.rm = TRUE, sep = "\n", remove = FALSE) %>% 
-			select(position, label),
-		mapping = aes(x = 0, y = 1, label = label),
-		size = 1.75,
-		hjust = 0, vjust = 1, 
-	) + 
+#	geom_text(
+#		data = cand_adap_site_info %>% 
+#			mutate(
+#				label_B.1.36.16 = 
+#				ifelse(
+#					adap_site_cand_B.1.36.16, 
+#					paste(
+#						"B.1.36.16: \u0394s = ", round(mut_adv_coef_B.1.36.16, 3), 
+#						";\n\u00B5 = ", mu_nt_aa_B.1.36.16, 
+#						";\n+ve experiment = ", positive_exp_id_B.1.36.16,
+#						sep = ""
+#					),
+#					NA
+#				),
+#				label_AY.30 = 
+#				ifelse(
+#					adap_site_cand_AY.30, 
+#					paste(
+#						"AY.30: \u0394s = ", round(mut_adv_coef_AY.30, 3), 
+#						";\n\u00B5 = ", mu_nt_aa_AY.30, 
+#						";\n+ve experiment = ", positive_exp_id_AY.30,
+#						sep = ""
+#					),
+#					NA
+#				)
+#			) %>% 
+#			unite(label, label_B.1.36.16, label_AY.30, na.rm = TRUE, sep = "\n", remove = FALSE) %>% 
+#			select(position, label),
+#		mapping = aes(x = 0, y = 1, label = label),
+#		size = 1.75,
+#		hjust = 0, vjust = 1, 
+#	) + 
 
 	theme_classic() +
 	theme(
@@ -719,7 +722,7 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, cand_adap_site_info,
 	)
 }
 
-#make Ext Data Figure S3: Temporal dynamics of potential adaptive changes found in all cell lines
+#make Ext Data Figure S3-S6: Temporal dynamics of potential adaptive changes found in all cell lines
 mu_freq_plots <- NULL
 mu_freq_plots[["Vero E6"]] <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_for_plotting %>% 
@@ -731,7 +734,17 @@ mu_freq_plots[["Vero E6"]] <- plot_temp_dyn_of_adap_change(
 		unite(strip_lab, gene, subdomain, na.rm = TRUE, sep = "\n", remove = FALSE) %>%
 		mutate(strip_lab = paste(prettyNum(position, big.mark = ","), strip_lab, sep = ": ")), 
 	plot_title = "Temporal dynamics of potential Vero E6 adaptive mutations") + 
-	theme(legend.position = "none")
+	theme(
+		legend.position = "bottom",
+		legend.box = "horizontal",
+		legend.key.width = unit(0.75,"cm"), 
+		legend.key.height = unit(0.25,"cm"), 
+		legend.margin = margin(t = 0, unit = "cm"),
+		legend.title = element_text(size = 8, face = "bold"), 
+		legend.text = element_text(size = 6),
+	) + 
+	guides(colour = guide_legend(title.position = "top"),
+      	linetype = guide_legend(title.position = "top"))
 
 mu_freq_plots[["Vero E6-TMPRSS2"]] <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_for_plotting %>% 
@@ -743,7 +756,18 @@ mu_freq_plots[["Vero E6-TMPRSS2"]] <- plot_temp_dyn_of_adap_change(
 		unite(strip_lab, gene, subdomain, na.rm = TRUE, sep = "\n", remove = FALSE) %>%
 		mutate(strip_lab = paste(prettyNum(position, big.mark = ","), strip_lab, sep = ": ")), 
 	plot_title = "Temporal dynamics of potential Vero E6/TMPRSS2 adaptive mutations") + 
-	theme(legend.position = "none")
+	theme(
+		legend.position = "bottom",
+		legend.box = "horizontal",
+		legend.key.width = unit(0.75,"cm"), 
+		legend.key.height = unit(0.25,"cm"), 
+		legend.margin = margin(t = 0, unit = "cm"),
+		legend.title = element_text(size = 8, face = "bold"), 
+		legend.text = element_text(size = 6),
+	) + 
+	guides(colour = guide_legend(title.position = "top"),
+      	linetype = guide_legend(title.position = "top"))
+
 
 mu_freq_plots[["Calu-3"]] <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_for_plotting %>% 
@@ -758,23 +782,45 @@ mu_freq_plots[["Calu-3"]] <- plot_temp_dyn_of_adap_change(
 	theme(
 		legend.position = "bottom",
 		legend.box = "horizontal",
-		legend.key.width = unit(1,"cm"), 
+		legend.key.width = unit(0.75,"cm"), 
 		legend.key.height = unit(0.25,"cm"), 
 		legend.margin = margin(t = 0, unit = "cm"),
 		legend.title = element_text(size = 8, face = "bold"), 
 		legend.text = element_text(size = 6),
-	) 
+	) + 
+	guides(colour = guide_legend(title.position = "top"),
+      	linetype = guide_legend(title.position = "top"))
+
 
 mu_freq_plots <- align_plots(plotlist = mu_freq_plots, align = "hv", axis = "tblr")
 
-plot_height = 1200 #in mm
 #save figure to files
-ggsave(Ext_Dat_FigS3_temp_dyn_of_adap_changes.png_filename,
-	plot = plot_grid(plotlist = mu_freq_plots, ncol = 1, rel_heights = c(15.677 + 15*(plot_height - 3*15.677)/28, 15.677 + 2*(plot_height - 3*15.677)/28, 15.677 + 11*(plot_height - 3*15.677)/28)),
-	width = 17, height = plot_height/10, units = "cm",
+ggsave(Ext_Dat_FigS3_temp_dyn_of_adap_changes.E6.png_filename,
+	plot = mu_freq_plots[["Vero E6"]],
+	width = 16, height = 63.33, units = "cm",
 	dpi = 300)
 
-ggsave(Ext_Dat_FigS3_temp_dyn_of_adap_changes.svg_filename,
-	plot = plot_grid(plotlist = mu_freq_plots, ncol = 1, rel_heights = c(15.677 + 15*(plot_height - 3*15.677)/28, 15.677 + 2*(plot_height - 3*15.677)/28, 15.677 + 11*(plot_height - 3*15.677)/28)),
-	width = 17, height = plot_height/10, units = "cm",
+ggsave(Ext_Dat_FigS3_temp_dyn_of_adap_changes.E6.svg_filename,
+	plot = mu_freq_plots[["Vero E6"]],
+	width = 16, height = 63.33, units = "cm",
+	dpi = 300)
+
+ggsave(Ext_Dat_FigS4_temp_dyn_of_adap_changes.TM.png_filename,
+	plot = mu_freq_plots[["Vero E6-TMPRSS2"]],
+	width = 16, height = 9.80, units = "cm",
+	dpi = 300)
+
+ggsave(Ext_Dat_FigS4_temp_dyn_of_adap_changes.TM.svg_filename,
+	plot = mu_freq_plots[["Vero E6-TMPRSS2"]],
+	width = 16, height = 9.80, units = "cm",
+	dpi = 300)
+
+ggsave(Ext_Dat_FigS5_temp_dyn_of_adap_changes.C3.png_filename,
+	plot = mu_freq_plots[["Calu-3"]],
+	width = 16, height = 46.86, units = "cm",
+	dpi = 300)
+
+ggsave(Ext_Dat_FigS5_temp_dyn_of_adap_changes.C3.svg_filename,
+	plot = mu_freq_plots[["Calu-3"]],
+	width = 16, height = 46.86, units = "cm",
 	dpi = 300)
