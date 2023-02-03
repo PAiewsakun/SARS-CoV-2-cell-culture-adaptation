@@ -37,18 +37,18 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, mut_pattern_levels){
 	mutate(
 		variant = factor(variant, levels = c("B.1.36.16", "AY.30")),
 		sample = factor(sample, levels = c("73NLt", "CV130", "OTV54", "NH783")),
-		cell_line = factor(cell_line, c("Vero E6", "Vero E6-TMPRSS2", "Calu-3")),
+		cell_line = factor(cell_line, c("Vero E6", "Vero E6/TMPRSS2", "Calu-3")),
 		passage = factor(passage, levels = c("P0", "P1", "P2", "P3", "P4"), ordered = TRUE),
 		replicate = paste("Replicate: ", replicate, sep = ""),
 		replicate = factor(replicate, levels = c("Replicate: A", "Replicate: B")),
-		mut_pattern = factor(mut_pattern, levels = mut_pattern_levels), 
+		mut_pattern = factor(mut_pattern, levels = mut_pattern_levels), #the first one of the mut_pattern_levels is the WT one
 		frequency = as.numeric(frequency),
 
 		variant_sample = factor(paste(variant, sample, sep = ": "), levels = c("B.1.36.16: 73NLt", "B.1.36.16: CV130", "AY.30: OTV54", "AY.30: NH783")) #add variant_sample column
 	)
 
 	cols_dict <- setNames(
-		rainbow(variant_table_dat %>% select(mut_pattern) %>% n_distinct(), alpha = 1),
+		c("#FFFFFFFF", rainbow(variant_table_dat %>% select(mut_pattern) %>% n_distinct() - 1, alpha = 1)),
 		variant_table_dat %>% 
 		group_by(mut_pattern) %>%
 		summarise(sum_freq = sum(frequency)) %>% pull(mut_pattern)
@@ -56,10 +56,10 @@ plot_temp_dyn_of_adap_change <- function(variant_table_dat, mut_pattern_levels){
 
 	mu_freq_plots <- 
 		ggplot(data = variant_table_dat, aes(fill = mut_pattern, y = frequency, x = passage)) + 
-		geom_bar(position = "fill", stat = "identity") +
+		geom_bar(position = "fill", stat = "identity", colour = "black", size = 0.1) +
 		scale_fill_manual(name = "Mutational\npatterns", values = cols_dict) +
 
-		scale_x_discrete(name = NULL) + scale_y_continuous(name = "Variant frequency") +
+		scale_x_discrete(name = NULL) + scale_y_continuous(name = "Mutation\nfrequency") +
 		facet_nested(cell_line ~ position + variant_sample + replicate) +
 
 		theme_classic() +
@@ -108,14 +108,17 @@ variant_table_dat_NSP3_PLpro <- read.table(variant_table_dat_NSP3_PLpro_filename
 mu_freq_plots_MBCS_B.1.36.16 <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_MBCS_B.1.36.16, 
 	mut_pattern_levels = c("YQTQTNSPRRAR", "Y-----SPRRAR", "YQTQTNSPWRAR", "YQTQTNSPQRAR", "YQTQTNSPLRAR", "Others")
+	) +
+	theme(
+		plot.margin = unit(c(0,2.25,0,0),"cm"),
 	)
+
 mu_freq_plots_MBCS_AY.30 <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_MBCS_AY.30, 
 	mut_pattern_levels = c("TNSRRRARSVA", "TNSRQRARSVA", "T-------SVA", "T----------", "TNSRWRARSVA", "TNSRRRARIVA", "TNSRRRARRVA", "TNSRRRACSVA", "TR---RARSVA", "TNSRRRARSVT", "TNSRQQARSVA", "Others")
-	) + 
+	) +
 	theme(
-		plot.margin = unit(c(0,2,0,0),"cm"),
-		legend.position = c(1.075, 0.0),
+		plot.margin = unit(c(0,2.25,0,0),"cm"),
 	)
 
 mu_freq_plots_SH655Y <- plot_temp_dyn_of_adap_change(
@@ -123,8 +126,8 @@ mu_freq_plots_SH655Y <- plot_temp_dyn_of_adap_change(
 	mut_pattern_levels = c("H655", "Y655", "Others")
 	) +
 	theme(
-		plot.margin = unit(c(0,2,0,0),"cm"),
-		legend.position = c(1.075, 0.0),
+		plot.margin = unit(c(0,1.5, 0,0),"cm"),
+		#legend.position = c(1.075, 0.0),
 	)
 
 mu_freq_plots_NLinker_B.1.36.16 <- plot_temp_dyn_of_adap_change(
@@ -133,8 +136,8 @@ mu_freq_plots_NLinker_B.1.36.16 <- plot_temp_dyn_of_adap_change(
 	) +
 	scale_y_continuous(name = NULL) +
 	theme(
-		plot.margin = unit(c(0,2,0,0),"cm"),
-		legend.position = c(1.30, 0.0)
+		plot.margin = unit(c(0,1.5,0,0),"cm"),
+		#legend.position = c(1.30, 0.0)
 	)
 mu_freq_plots_NLinker_AY.30 <- plot_temp_dyn_of_adap_change(
 	variant_table_dat = variant_table_dat_NLinker_AY.30,
@@ -142,8 +145,8 @@ mu_freq_plots_NLinker_AY.30 <- plot_temp_dyn_of_adap_change(
 	) +
 	scale_y_continuous(name = NULL) +
 	theme(
-		plot.margin = unit(c(0,2,0,0),"cm"),
-		legend.position = c(1.30, 0.0)
+		plot.margin = unit(c(0,1.5,0,0),"cm"),
+		#legend.position = c(1.30, 0.0)
 	)
 
 mu_freq_plots_NSP1 <- plot_temp_dyn_of_adap_change(
@@ -192,7 +195,7 @@ mu_freq_plots_NSP3_PLpro <- left_aligned_plots[[6]]
 
 right_aligned_plots <- align_plots(
 mu_freq_plots_MBCS_B.1.36.16,
-mu_freq_plots_NLinker_B.1.36.16, 
+mu_freq_plots_MBCS_AY.30,
 mu_freq_plots_NLinker_AY.30,
 mu_freq_plots_NSP1,
 mu_freq_plots_M,
@@ -200,49 +203,29 @@ mu_freq_plots_NSP3_PLpro,
 	align = "v", axis = "r")
 
 mu_freq_plots_MBCS_B.1.36.16 <- right_aligned_plots[[1]]
-mu_freq_plots_NLinker_B.1.36.16 <- right_aligned_plots[[2]]
+mu_freq_plots_MBCS_AY.30 <- right_aligned_plots[[2]]
 mu_freq_plots_NLinker_AY.30 <- right_aligned_plots[[3]]
 mu_freq_plots_NSP1 <- right_aligned_plots[[4]]
 mu_freq_plots_M <- right_aligned_plots[[5]]
 mu_freq_plots_NSP3_PLpro <- right_aligned_plots[[6]]
 
-left_aligned_plots <- align_plots(
-mu_freq_plots_NLinker_B.1.36.16, 
-mu_freq_plots_NLinker_AY.30,
-align = "v", axis = "l")
-
-mu_freq_plots_NLinker_B.1.36.16 <- left_aligned_plots[[1]]
-mu_freq_plots_NLinker_AY.30 <- left_aligned_plots[[2]]
-
-mu_freq_plots_MBCS_AY.30_and_SH655Y <- plot_grid(
-	mu_freq_plots_MBCS_AY.30, 
+mu_freq_plots_SH655Y_and_NLinker <- plot_grid(
 	mu_freq_plots_SH655Y,
-	labels = c("", "b)"),
-	ncol = 1, rel_heights = c(1, 1)
-) 
-
-mu_freq_plots_NLinker <- plot_grid(
 	mu_freq_plots_NLinker_B.1.36.16, 
 	mu_freq_plots_NLinker_AY.30,
-	labels = c("c)", ""),
-	ncol = 1, rel_heights = c(1, 1)
-) 
-
-mu_freq_plots_MBCS_AY.30_SH655Y_and_NLinker <- plot_grid(
-	mu_freq_plots_MBCS_AY.30_and_SH655Y, 
-	mu_freq_plots_NLinker,
-	labels = c("", ""),
-	ncol = 2, rel_widths = c(1.475, 1)
+	labels = c("c)", "d)", "e)"),
+	nrow = 1, rel_widths = c(1.55, 1, 1.2)
 ) 
 
 mu_freq_plots <- plot_grid(
 mu_freq_plots_MBCS_B.1.36.16,
-mu_freq_plots_MBCS_AY.30_SH655Y_and_NLinker,
+mu_freq_plots_MBCS_AY.30,
+mu_freq_plots_SH655Y_and_NLinker,
 mu_freq_plots_NSP1,
 mu_freq_plots_M,
 mu_freq_plots_NSP3_PLpro,
-	labels = c("a)", "", "d)", "e)", "f)"),
-	nrow = 5, rel_heights = c(1, 2, 1, 1, 2.0338)
+	labels = c("a)", "b)", "", "f)", "g)", "h)"),
+	nrow = 6, rel_heights = c(1, 1, 1, 1, 1, 2.0338)
 ) 
 
 #save figure to files
