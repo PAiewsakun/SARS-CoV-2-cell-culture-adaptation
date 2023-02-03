@@ -44,7 +44,7 @@ ct_value_dat %>% select(-variant_sample) %>% spread(passage, ct) %>%
 
 #make the plot
 ct_value_plot <- ct_value_dat %>% mutate(exp_id = paste(sample, cell_line, replicate, sep = "_")) %>%
-	ggplot(aes(x = passage, y = ct, group = exp_id, col = variant_sample, linetype = variant_sample, shape = variant_sample)) +
+	ggplot(aes(x = passage, y = ct, group = exp_id, col = variant_sample, linetype = replicate), shape = 16) +
 	geom_point(size = 2) + 
 	geom_line(size = 0.5) + 
 	scale_color_manual(
@@ -54,25 +54,16 @@ ct_value_plot <- ct_value_dat %>% mutate(exp_id = paste(sample, cell_line, repli
 			"B.1.36.16: CV130" = "#91D1C2DD",
 			"AY.30: OTV54" = "#E64B35FF",
 			"AY.30: NH783" = "#F39B7FFF"
-		)
+		),
+		guide = guide_legend(order = 2)
 	) +
 	scale_linetype_manual(
-		name = "Virus sample",
+		name = "Replicate",
 		values = c( 
-			"B.1.36.16: 73NLt" = "solid", 
-			"B.1.36.16: CV130" = "solid",
-			"AY.30: OTV54" = "solid", 
-			"AY.30: NH783" = "solid"
-		)
-	) +
-	scale_shape_manual(
-		name = "Virus sample",
-		values = c(
-			"B.1.36.16: 73NLt" = 16, 
-			"B.1.36.16: CV130" = 16,
-			"AY.30: OTV54" = 16, 
-			"AY.30: NH783" = 16
-		)
+			"A" = "solid", 
+			"B" = "dashed"
+		), 
+		guide = guide_legend(direction = "horizontal", order = 1)
 	) +
 	facet_grid(. ~ cell_line, 
 		scales = "free", space = "free", 
@@ -83,6 +74,7 @@ ct_value_plot <- ct_value_dat %>% mutate(exp_id = paste(sample, cell_line, repli
 	theme_light() + 
 	theme(
 		legend.position = "right",
+		legend.spacing.y = unit(0, "lines"),
       	legend.title = element_text(size = 10),
 	      legend.text = element_text(size = 8),
 
@@ -186,7 +178,7 @@ eq_text <- mdl_coef %>%
 		)
 	) %>%
 	select(variant, sample, cell_line, variant_sample, intercept, slope, r2, p, sig) %>% unique() %>%
-	mutate(label = paste("ln(titre) = ", intercept, slope, " × passage", ";\n", expression("r^2 = "), r2, "; ", p, sig, sep = "") )
+	mutate(label = paste("ln(titre) = ", intercept, slope, " Ã— passage", ";\n", expression("r^2 = "), r2, "; ", p, sig, sep = "") )
 
 inf_virus_titre_plot <- 
 	ggplot(
