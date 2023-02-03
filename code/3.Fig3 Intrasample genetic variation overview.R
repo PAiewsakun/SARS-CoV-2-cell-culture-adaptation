@@ -12,6 +12,7 @@ library(tidyverse)
 
 library(ggplot2)
 library(ggh4x) #facet_nested function and ggplot
+library(cowplot)
 
 source("miscellaneous funcs.R")
 
@@ -23,6 +24,8 @@ variant_table_dat_filename <- "data/variant table.txt"
 
 #outputs
 Misc_info_var_site_count_by_cellline_filename <- "results/Misc_info.var_site_count_by_cell_line.txt"
+Misc_info_var_site_count_dynamics_filename <- "results/Misc_info.var_site_count_dynamics.txt"
+
 formated_const_and_var_site_counts_filename <- "results/Supplementary Table 2.const_and_var_site_counts.txt"
 var_site_count_by_gen_change_type_filename <- "results/Supplementary Table 3.variant site count by genetic change type.txt"
 
@@ -162,6 +165,130 @@ cat(sprintf("Clinical sample: median %s%%; range %s%%\n", fbivar_sites_clinical_
 cat(sprintf("Cultured sample: median %s%%; range %s%%\n", fbivar_sites_cultured_samples$med, fbivar_sites_cultured_samples$range))
 cat("\n")
 sink()
+
+#fit model to the polymoprhic site count to see how it varies with time
+x <- var_type_count_table %>% filter(cell_line != "Clinical sample") %>% 
+mutate(
+	passage = ifelse(passage == "P1", 0, ifelse(passage == "P2", 1, ifelse(passage == "P3", 2, ifelse(passage == "P4", 3, NA)))), 
+	variant_sample = paste(variant, sample, sep = "_")
+	) 
+
+mdl_0 <- lm(data = x, formula = var_sites ~ cell_line + passage)
+mdl_1 <- lm(data = x, formula = var_sites ~ cell_line * passage)
+anova(mdl_0, mdl_1)
+
+mdl_2 <- lm(data = x, formula = var_sites ~ cell_line + passage + sample)
+anova(mdl_0, mdl_2)
+
+#write the stats to file
+sink(Misc_info_var_site_count_dynamics_filename)
+cat("Dynamics of variant site numbers through passages\n")
+cat("=========================\n")
+cat("H0: var_sites ~ cell_line + passage\n")
+summary(mdl_0)
+cat("H1: var_sites ~ cell_line * passage\n")
+summary(mdl_1)
+cat("H2: var_sites ~ cell_line + passage + sample\n")
+summary(mdl_2)
+
+cat("The rates at which the variant site count decreases are not significantly different among cell lines used in the propagation\n")
+cat("=========================\n")
+anova(mdl_0, mdl_1)
+cat("\n")
+cat("The rates at which the variant site count decreases are not significantly different among viral samples\n")
+cat("=========================\n")
+anova(mdl_0, mdl_2)
+cat("\n")
+sink()
+
+#####################
+#Plot polymorphic site counts through passages 
+#####################
+var_count_through_passages_plot <- 
+	ggplot() + 
+	geom_hline(
+		data = var_type_count_table %>% 
+			filter(cell_line == "Clinical sample") %>% 
+			mutate(
+				variant_sample = factor(paste(variant, sample, sep = ": "), levels = c("B.1.36.16: 73NLt", "B.1.36.16: CV130", "AY.30: OTV54", "AY.30: NH783"))
+			) %>%
+			select (-cell_line), 
+		aes(yintercept = var_sites, col = variant_sample), linetype = "solid", lwd = 0.5) + 
+
+	geom_point(
+		data = var_type_count_table %>% filter(cell_line != "Clinical sample") %>%
+		mutate(
+			variant_sample = factor(paste(variant, sample, sep = ": "), levels = c("B.1.36.16: 73NLt", "B.1.36.16: CV130", "AY.30: OTV54", "AY.30: NH783")),
+			exp_id = paste(sample, cell_line, replicate, sep = "_")
+		), 
+		aes(x = passage, y = var_sites, col = variant_sample), size = 1) + 
+
+	geom_line(
+		data = var_type_count_table %>% filter(cell_line != "Clinical sample") %>%
+		mutate(
+			variant_sample = factor(paste(variant, sample, sep = ": "), levels = c("B.1.36.16: 73NLt", "B.1.36.16: CV130", "AY.30: OTV54", "AY.30: NH783")),
+			exp_id = paste(sample, cell_line, replicate, sep = "_")
+		),
+		aes(x = passage, y = var_sites, group = exp_id, col = variant_sample, linetype = replicate), linewidth = 0.5) +
+
+	scale_color_manual(
+		name = "Virus sample",
+		values = c(
+			"B.1.36.16: 73NLt" = "#00A087FF", 
+			"B.1.36.16: CV130" = "#91D1C2DD", 
+			"AY.30: OTV54" = "#E64B35FF", 
+			"AY.30: NH783" = "#F39B7FFF" 
+		),
+		guide = guide_legend(title.position = "top", direction = "horizontal", keyheight = 0.4, nrow = 2, order = 1)
+
+	) +
+	scale_linetype_manual(
+		name = "Replicate",
+		values = c( 
+			"A" = "solid", 
+			"B" = "dashed"
+		), 
+		guide = guide_legend(title.position = "top", direction = "horizontal", keyheight = 0.4, order = 2)
+	) +
+
+	scale_x_discrete(name = "Passage") +
+	scale_y_continuous(name = "Polymorphic site count") +
+
+	geom_line(
+		data = mdl_0$model %>% 
+				select(cell_line, passage) %>%
+				unique %>%
+				mutate(var_sites = predict(mdl_0, data.frame(cell_line = cell_line, passage = passage))) %>%
+				mutate(passage = recode(passage, "0" = "P1", "1" = "P2", "2" = "P3", "3" = "P4")) %>%
+				mutate(exp_id = cell_line),
+		aes(x = passage, y = var_sites, group = exp_id), col = "black", linetype = "solid", linewidth = 1) + 
+
+	facet_grid(
+		. ~ cell_line, 
+		labeller = labeller(cell_line = c("Vero E6" = "Vero E6", "Vero E6-TMPRSS2" = "Vero E6/\nTMPRSS2", "Calu-3" = "Calu-3"))
+	) +
+
+	theme_light() + 
+	theme(
+		legend.justification = c(0, 1),
+		legend.position = c(0.01, 0.98),
+		#legend.position = "bottom",
+		legend.background = element_rect(fill = alpha("white", 0.5)),
+		legend.key = element_rect(fill = alpha("white", 0.5)),
+		legend.box = "vertical",
+
+		legend.title = element_text(size = 8, face = "bold"), 
+		legend.text = element_text(size = 6),
+
+		legend.margin = margin(0,0,0,0),
+		legend.box.margin = margin(0,0,0,0),
+		legend.spacing.y = unit(0.0, 'cm'), 
+
+		axis.text.x = element_text(size = 6), axis.text.y = element_text(size = 6),
+
+		strip.background =element_rect(fill = "white", color = "black"),
+		strip.text = element_text(size = 8, color = "black", face = "bold")
+	)
 
 #####################
 #Plot distributions of polymorphic site counts by genetic change type
@@ -319,10 +446,10 @@ genetic_change_count_plot <- genetic_change_count_table_long_mean_sd %>%
 			names(variant_table_dat %>% select(A.T:DEL.G) %>% select(-contains("INS.")))
 		)
 	) +
-	scale_y_continuous(name = "Count") +
+	scale_y_continuous(name = "Polymorphic site count") +
 	facet_nested(
 		cell_line ~ variant + sample, 
-		labeller = labeller(cell_line = setNames(c("Clinical sample", "Vero E6", "Vero E6/TMPRSS2", "Calu-3"), levels(genetic_change_count_table$cell_line) ) )
+		labeller = labeller(cell_line = c("Clinical sample" = "Clinical\nsample", "Vero E6" = "Vero E6", "Vero E6-TMPRSS2" = "Vero E6/\nTMPRSS2", "Calu-3" = "Calu-3"))
 	) +
 	theme_light() + 
 	theme(
@@ -334,14 +461,31 @@ genetic_change_count_plot <- genetic_change_count_table_long_mean_sd %>%
 		strip.text = element_text(size = 8, color = "black", face = "bold")
 	)
 
+####################
+#Make a composit plot 
+####################
+aligned_plots <- align_plots(
+	var_count_through_passages_plot,
+	genetic_change_count_plot,
+	align = "v", axis = "lr"
+)
+
+Fig3_plot <- plot_grid(
+	aligned_plots[[1]],
+	aligned_plots[[2]],
+	labels = c("a)", "b)"),
+	ncol = 1, rel_heights = c(2, 4)
+	)+
+	theme(plot.background = element_rect(fill = "white", color = NA),  panel.border = element_blank())
+
 ggsave(Fig3_genetic_change_count.png_filename,
-	plot = genetic_change_count_plot,
-	width = 20, height = 14, units = "cm",
+	plot = Fig3_plot,
+	width = 16, height = 16, units = "cm",
 	dpi = 300)
 
 ggsave(Fig3_genetic_change_count.svg_filename,
-	plot = genetic_change_count_plot,
-	width = 20, height = 14, units = "cm",
+	plot = Fig3_plot,
+	width = 16, height = 16, units = "cm",
 	dpi = 300)
 
 ####################
@@ -376,10 +520,10 @@ cat("\n")
 
 cat("Model comparisons\n")
 cat("=========================\n")
-cat("**Count distributions were significantly different among viral samples and cell culture conditions...**")
+cat("**Count distributions were significantly different among viral samples and cell culture conditions...**\n")
 anova(mdl_3, mdl_2, test = "LRT")
 cat("\n")
-cat("**...and the effects were not simply additive**")
+cat("**...and the effects were not simply additive**\n")
 anova(mdl_2, mdl_1, test = "LRT")
 cat("\n")
 sink()
@@ -416,14 +560,13 @@ cat("\n")
 
 cat("Model comparisons\n")
 cat("=========================\n")
-cat("**Count distributions were significantly different among viral samples and cell culture conditions...**")
+cat("**Count distributions were significantly different among viral samples and cell culture conditions...**\n")
 anova(mdl_3, mdl_2, test = "LRT")
 cat("\n")
-cat("**...and the effects were not simply additive**")
+cat("**...and the effects were not simply additive**\n")
 anova(mdl_2, mdl_1, test = "LRT")
 cat("\n")
 sink()
-
 
 ####################
 #Comparing polymorphic site freq distributions by likelihood ratio tests, considering base substitutions only
@@ -457,7 +600,7 @@ cat("\n")
 
 cat("Model comparisons\n")
 cat("=========================\n")
-cat("**freq distributions were insignificantly different among viral samples and cell culture conditions...**")
+cat("**freq distributions were insignificantly different among viral samples and cell culture conditions...**\n")
 anova(mdl_3, mdl_2, test = "LRT")
 sink()
 
